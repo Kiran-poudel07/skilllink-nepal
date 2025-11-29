@@ -6,7 +6,7 @@ const KhaltiInitiatePage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { gigId, applicationId, gigTitle } = location.state || {};
+  const { gigId, applicationId } = location.state || {};
   const [amount, setAmount] = useState("");
   const [loading, setLoading] = useState(false);
 

@@ -110,7 +110,7 @@ const ApplicationsPage = () => {
 
   const handleDelete = async (appId: string) => {
     try {
-      const res = await axiosConfig.delete(`/application/${appId}`);
+      await axiosConfig.delete(`/application/${appId}`);
       toast.success("Application deleted successfully!");
       setApps((prev) => prev.filter((a) => a._id !== appId));
       setShowConfirm(false);

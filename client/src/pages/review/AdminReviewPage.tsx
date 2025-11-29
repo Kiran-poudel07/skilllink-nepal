@@ -45,10 +45,9 @@ interface MetaData {
 
 interface ApiResponse {
   status: string;
-  data: {
-    data: Review[];
-    meta: MetaData;
-  };
+  data: Review[];
+  meta: MetaData;
+
 }
 
 
@@ -90,8 +89,8 @@ const AdminReviewsPage: React.FC = () => {
         `review/admin?${params.toString()}`
       );
 
-      setReviews(response.data?.data || []);
-      setMeta(response.data?.meta || null);
+      setReviews(response.data.data || []);
+      setMeta(response.data.meta || null);
     } catch (error) {
       console.error("Failed to load reviews", error);
     } finally {
@@ -113,11 +112,11 @@ const AdminReviewsPage: React.FC = () => {
     try {
       setLoading(true);
 
-      const response = await axiosConfig.get<{ status: string; data: { data: Review } }>(
+      const response = await axiosConfig.get<ApiResponse>(
         `/review/${searchId}`
       );
 
-      console.log(response.data.data)
+      // console.log(response.data.data)
       setReviews(response.data.data);
       // setMeta({
       //   page: 1,

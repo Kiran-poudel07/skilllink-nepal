@@ -45,9 +45,9 @@ interface IGigResponse {
   total: number;
 }
 
-interface IUser {
-  role: "student" | "employer" | "admin";
-}
+// interface IUser {
+//   role: "student" | "employer" | "admin";
+// }
 
 const AllGigViewPage = () => {
   const navigate = useNavigate();
@@ -60,7 +60,7 @@ const AllGigViewPage = () => {
   const [page, setPage] = useState<number>(1);
   const [total, setTotal] = useState<number>(0);
   const [limit] = useState<number>(6);
-  const [user, setUser] = useState<IUser | null>(null);
+  // const [user, setUser] = useState<IUser | null>(null);
   const { loggedInUser } = useAuth();
 
 
@@ -77,7 +77,7 @@ const AllGigViewPage = () => {
     const userData = localStorage.getItem("user");
     if (userData) {
       try {
-        setUser(JSON.parse(userData));
+        // setUser(JSON.parse(userData));
       } catch {
         console.error("Invalid user in localStorage");
       }

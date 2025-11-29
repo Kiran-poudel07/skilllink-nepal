@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axiosConfig from "../../config/axios.config";
 import { AiFillStar } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";

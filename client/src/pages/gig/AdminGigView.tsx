@@ -16,7 +16,6 @@ import {
   Edit2 as IconEdit,
   Trash2 as IconTrash,
   RotateCw as IconRestore,
-  Check as IconCheck,
   X as IconX,
   Plus as IconPlus,
 } from "lucide-react";
@@ -707,11 +706,11 @@ const AdminGigs: React.FC = () => {
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6">
-            <PageButton page={1} className="p-2 sm:p-3 md:p-4">
+            <PageButton page={1} >
               <ChevronsLeft className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
             </PageButton>
 
-            <PageButton page={Math.max(1, currentPage - 1)} className="p-2 sm:p-3 md:p-4">
+            <PageButton page={Math.max(1, currentPage - 1)}>
               <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
             </PageButton>
 
@@ -726,7 +725,7 @@ const AdminGigs: React.FC = () => {
                     <PageButton
                       key={page}
                       page={page}
-                      className="min-w-[32px] sm:min-w-[36px] md:min-w-[40px]"
+                      
                     >
                       {page}
                     </PageButton>
@@ -742,11 +741,11 @@ const AdminGigs: React.FC = () => {
               })}
             </div>
 
-            <PageButton page={Math.min(totalPages, currentPage + 1)} className="p-2 sm:p-3 md:p-4">
+            <PageButton page={Math.min(totalPages, currentPage + 1)}>
               <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
             </PageButton>
 
-            <PageButton page={totalPages} className="p-2 sm:p-3 md:p-4">
+            <PageButton page={totalPages} >
               <ChevronsRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
             </PageButton>
           </div>

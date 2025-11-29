@@ -42,7 +42,7 @@ const NotificationPanel: React.FC = () => {
   const [filter, setFilter] = useState<"all" | "unread">("all");
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [unreadCount, setUnreadCount] = useState<number>(0);
+  // const [unreadCount, setUnreadCount] = useState<number>(0);
 
   const fetchNotifications = async () => {
     try {
@@ -50,7 +50,7 @@ const NotificationPanel: React.FC = () => {
       const res = await axiosConfig.get("/notification");
       const data = res.data.data || [];
       setNotifications(data);
-      setUnreadCount(data.filter((n: Notification) => !n.isRead).length);
+      // setUnreadCount(data.filter((n: Notification) => !n.isRead).length);
     } catch (err) {
       console.error("Fetch error:", err);
     } finally {
@@ -68,7 +68,7 @@ const NotificationPanel: React.FC = () => {
 
       const clicked = notifications.find(n => n._id === id);
       if (clicked && !clicked.isRead) {
-        setUnreadCount(prev => Math.max(prev - 1, 0));
+        // setUnreadCount(prev => Math.max(prev - 1, 0));
       }
 
     } catch (err) {
@@ -81,8 +81,8 @@ const NotificationPanel: React.FC = () => {
       await axiosConfig.delete(`notification/delete/${id}`);
       setNotifications(prev => prev.filter(n => n._id !== id));
 
-      const removed = notifications.find(n => n._id === id);
-      if (removed && !removed.isRead) setUnreadCount(prev => prev - 1);
+      // const removed = notifications.find(n => n._id === id);
+      // if (removed && !removed.isRead) setUnreadCount(prev => prev - 1);
     } catch (err) {
       console.error(err);
     }
