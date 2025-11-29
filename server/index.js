@@ -1,9 +1,10 @@
 const http = require("http");
+require("dotenv").config()
 const app = require("./src/config/express.config")
 const { initSocket } = require("./src/config/socket");
 const httpServer = http.createServer(app);
 
-const PORT = 9005;
+const PORT = process.env.PORT || 9005;
 const host = "127.0.0.1";
 
 initSocket(httpServer);
