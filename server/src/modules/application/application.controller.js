@@ -38,7 +38,7 @@ class ApplicationController {
   }
   async updateStatus(req, res, next) {
     try {
-      console.log("employer id", req.loggedInUser._id)
+      // console.log("employer id", req.loggedInUser._id)
       const employerId = req.loggedInUser._id;
       const application = await applicationSvc.updateStatus(req.params.id, employerId, req.body.status);
       res.json({ status: "success", message: "Application status updated", data: application });

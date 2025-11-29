@@ -37,7 +37,7 @@ interface StatsApiResponse {
   };
 }
 
-const PublicEmployers: React.FC = () => {
+const PublicEmployers = () => {
   const [employers, setEmployers] = useState<Employer[]>([]);
   const [stats, setStats] = useState<StatsApiResponse["data"] | null>(null);
 
@@ -59,7 +59,7 @@ const PublicEmployers: React.FC = () => {
 
     try {
       const res = await fetch(
-        `http://127.0.0.1:9005/api/test/public/employers?name=${search}&category=${category}&sort=${sort}&page=${page}&limit=${limit}`
+        `https://skilllink-nepal-backend-new.onrender.com/api/test/public/employers?name=${search}&category=${category}&sort=${sort}&page=${page}&limit=${limit}`||`http://127.0.0.1:9005/api/test/public/employers?name=${search}&category=${category}&sort=${sort}&page=${page}&limit=${limit}`
       );
 
       const json: EmployerApiResponse = await res.json();

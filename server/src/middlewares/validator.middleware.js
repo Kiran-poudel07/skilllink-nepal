@@ -14,7 +14,7 @@ const bodyValidator = (rules) => {
       await rules.validateAsync(data, { abortEarly: false,stripUnknown:true });
       next();
     } catch (exception) {
-      console.log("Joi validation error:", exception);
+      // console.log("Joi validation error:", exception);
       let msgBag = {};
       if (exception.details) {
         exception.details.forEach((error) => {

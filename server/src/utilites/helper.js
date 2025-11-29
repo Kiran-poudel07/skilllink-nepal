@@ -21,7 +21,7 @@ const randomStringGenerate = (len = 100) => {
     return random
 }
 exports.sendNotification = (userId, message) => {
-  console.log(` Notification sent to User(${userId}): ${message}`);
+//   console.log(` Notification sent to User(${userId}): ${message}`);
 };
 
 module.exports = {

@@ -26,7 +26,7 @@ class NotificationController {
  async getUnreadCount(req, res, next) {
     try {
       const userId = req.loggedInUser._id;
-      console.log(userId)
+      // console.log(userId)
       const count = await notificationSvc.getUnreadCount(userId);
 
       res.status(200).json({

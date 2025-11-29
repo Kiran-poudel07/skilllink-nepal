@@ -63,7 +63,7 @@ const AllGigViewPage = () => {
   const [user, setUser] = useState<IUser | null>(null);
   const { loggedInUser } = useAuth();
 
-  // Filters
+
   const [search, setSearch] = useState<string>("");
   const [gigIdSearch, setGigIdSearch] = useState<string>("");
   const [category, setCategory] = useState<string>("");

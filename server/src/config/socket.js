@@ -8,7 +8,7 @@ function initSocket(server) {
     });
 
     io.on("connection", (socket) => {
-        console.log("User connected:", socket.id);
+        // console.log("User connected:", socket.id);
 
         socket.on("join", (userId) => {
             onlineUsers.set(userId, socket.id);

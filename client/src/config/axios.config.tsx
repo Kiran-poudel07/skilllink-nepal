@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosConfig = axios.create({
-    baseURL: import.meta.env.VITE_API_BASE_URL,
+    baseURL: import.meta.env.VITE_API_PRODUCTION_BASE_URL || import.meta.env.VITE_API_BASE_URL,
     timeout: 10000,
     timeoutErrorMessage: "Server timed out...",
     responseType: "json",
