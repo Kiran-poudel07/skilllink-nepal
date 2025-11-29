@@ -32,7 +32,7 @@ class PaymentService {
     }
 
     const amountInPaisa = data.amount * 100;
-
+    const baseUrl = AppConfig.frontendnewUrl || AppConfig.frontendUrl;
     const response = await fetch(`${AppConfig.khaltiBaseUrl}epayment/initiate/`, {
       method: "POST",
       headers: {
@@ -40,8 +40,8 @@ class PaymentService {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        return_url: `${AppConfig.frontendUrl}/employer/khalti-success`,
-        website_url: AppConfig.frontendUrl,
+        return_url:`${baseUrl}/employer/khalti-success`,
+        website_url:baseUrl,
         amount: amountInPaisa,
         purchase_order_id: gig._id.toString(),
         purchase_order_name: gig.title

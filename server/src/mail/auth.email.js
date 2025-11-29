@@ -19,13 +19,18 @@ class AuthNotificationEmailService extends EmailService{
                         Please click the button below to activate your account:
                     </p>
                     <div style="text-align:center;margin-bottom:24px;">
+                    <a href="${AppConfig.frontendnewUrl}/auth/activate/${user.activationToken}" style="display:inline-block;padding:12px 32px;background:#13aa52;color:#fff;text-decoration:none;border-radius:4px;font-size:16px;font-weight:bold;">
+                            Activate Account
+                        </a>
                         <a href="${AppConfig.frontendUrl}/auth/activate/${user.activationToken}" style="display:inline-block;padding:12px 32px;background:#13aa52;color:#fff;text-decoration:none;border-radius:4px;font-size:16px;font-weight:bold;">
                             Activate Account
                         </a>
+                        
                     </div>
                     <p style="font-size:14px;color:#555;margin-bottom:16px;">
                         If the button above does not work, copy and paste the following URL into your browser:<br>
                         <span style="word-break:break-all;color:#13aa52;">${AppConfig.frontendUrl}/auth/activate/${user.activationToken}</span>
+                        <span style="word-break:break-all;color:#13aa52;">${AppConfig.frontendnewUrl}/auth/activate/${user.activationToken}</span>
                     </p>
                     <hr style="border:none;border-top:1px solid #eee;margin:24px 0;">
                     <p style="font-size:13px;color:#888;margin-bottom:0;">

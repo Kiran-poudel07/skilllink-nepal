@@ -11,6 +11,7 @@ const mongoDBConfig = {
 }
 const AppConfig = {
    frontendUrl: process.env.FORNTEND_URL,
+   frontendnewUrl:process.env.FORNTEND_URL_PRODUCTION,
     khaltiSecretKey: process.env.KHALTI_SECRET_KEY,
     khaltiBaseUrl:process.env.KHALTI_BASE_URL
 }
